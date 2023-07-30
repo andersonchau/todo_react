@@ -7,6 +7,7 @@ const baseURL = "https://25e2e52f-2486-4c6f-915d-86c06440f2f2.mock.pstmn.io/rest
 
 export default function TodoListUI() {
   
+  
   const [todoData, setTodoData] = useState(todoDataInit);
   
   useEffect(() => {
@@ -29,8 +30,8 @@ export default function TodoListUI() {
 
   let todoUIListX = (
     
-    
-    <div class="card">
+    <>
+    <div class="card mt-2">
     <h5 class="card-header">
         <div class="d-flex gap-1">
              <p class="p-0 m-0 flex-grow-1">Hello</p> 
@@ -58,10 +59,17 @@ export default function TodoListUI() {
           }
           </ul>
         </div>
-          
-          )
+        )
       }
-      </div>
+        </div>
+          <div class="d-flex flex-row gap-3 mt-2" >
+            <button class="btn btn-primary">Save</button>  
+            <button class="btn btn-primary">Reset</button>  
+           
+          </div>
+      </>
+          
+      
       
   );
   
