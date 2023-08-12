@@ -10,8 +10,17 @@ import mainDataInit from './todoListData.json';
 import { TasksContext, TasksDispatchContext } from './components/TaskContext.js';
 
 const todoMainOpReducer = (state, action) => {
+  //console.log('todoMainOpReducer called ' + action.type );
   switch (action.type) {
-  case 'CREATE_GROUP':
+  case 'API_RETURN':
+    let resultObj = 
+    {
+        ...state,
+        data : action.resp
+    }
+    //console.log('state is ' + JSON.stringify(state));
+    //console.log('resultObj is ' + JSON.stringify(resultObj));
+    return resultObj;
   break;
   }
 }

@@ -14,8 +14,8 @@ export default function TodoListUI() {
   const dispatch = useContext(TasksDispatchContext);
 
 
-  /*
-  const dispatch = useContext(TodoContext);
+  
+  //const dispatch = useContext(TodoContext);
   
   // to make sure to call 
   useEffect(() => {
@@ -24,8 +24,11 @@ export default function TodoListUI() {
      // setLoading(true);
       try {
         const {data: response} = await axios.get(baseURL);
-        console.log('Fetch data done : ' , response);
-        
+        //console.log('Fetch data done : ' , response);
+        dispatch({
+          type: 'API_RETURN',
+          resp : response
+        });
       } catch (error) {
         console.error(error.message);
       }
@@ -34,7 +37,7 @@ export default function TodoListUI() {
 
     fetchData();
   }, []);
-  */
+  
   //console.log(JSON.stringify(todoData));
   
   let todoUIListX = (
