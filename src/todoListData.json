@@ -1,10 +1,17 @@
-[
-    {
-        "groupName" : "Loading...",
-        "groupId" : "1",
-        "items" : 
-            [
-            
-            ]
-    }
-]
+{
+    "ui" : {
+        "formShow" : true,
+        "formType" : "ADD_GROUP", 
+        "shouldReload" : true
+    }, 
+    "data" : [
+        {
+            "groupName" : "Loading...",
+            "groupId" : "1",
+            "items" : 
+                [
+                ]
+        }
+    
+    ]
+}
