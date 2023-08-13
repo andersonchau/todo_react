@@ -8,11 +8,12 @@ import TodoForm from './components/TodoForm';
 import React, { useEffect, useReducer,createContext } from "react";
 import mainDataInit from './todoListData.json';
 import { TasksContext, TasksDispatchContext } from './components/TaskContext.js';
-
+import {generateUUID} from './components/Utils.js'
 const todoMainOpReducer = (state, action) => {
   //console.log('todoMainOpReducer called ' + action.type );
   switch (action.type) {
   case 'API_RETURN':
+  {
     let resultObj = 
     {
         ...state,
@@ -21,8 +22,41 @@ const todoMainOpReducer = (state, action) => {
     //console.log('state is ' + JSON.stringify(state));
     //console.log('resultObj is ' + JSON.stringify(resultObj));
     return resultObj;
-  break;
   }
+  case 'ADD_GROUP':
+  {
+    let resultObj = 
+    {
+        ...state
+    }
+    resultObj.ui.formType = 'ADD_GROUP';
+    resultObj.ui.formShow = true;
+    return resultObj;
+  }
+  case 'CLOSE_FORM':
+  {
+    let resultObj = 
+    {
+        ...state
+    }
+    resultObj.ui.formShow = false;
+    return resultObj;
+
+  }
+  case 'INPUT_SUBMIT':
+  {
+      if (state.ui.formType == 'ADD_GROUP') {
+        let resultObj = 
+        {
+            ...state
+        }
+        console.log('INPUT_SUBMIT called ');
+        resultObj.data.push({groupId : generateUUID(), groupName : action.inputData , items : [] });
+        resultObj.ui.formShow = false;
+        return resultObj;
+      }
+  }
+  } // switch
 }
 
 

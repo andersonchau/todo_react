@@ -4,8 +4,8 @@ export function formatDollars(dollars) {
   
     return dollars;
   }
-
-function generateUUID() { // Public Domain/MIT
+  
+export function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();//Timestamp
     var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {

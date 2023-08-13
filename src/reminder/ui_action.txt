@@ -1,8 +1,7 @@
 {
     "ui" : {
-        "formShow" : false,
+        "formShow" : true,
         "formType" : "ADD_GROUP", 
-        "dataId" : "",
         "shouldReload" : true
     }, 
     "data" : [
@@ -16,3 +15,7 @@
     
     ]
 }
+
+
+formType : 
+ADD_GROUP
